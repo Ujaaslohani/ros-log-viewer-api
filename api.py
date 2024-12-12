@@ -47,4 +47,7 @@ def get_logs(severity: Optional[str] = None):
         filtered_logs = [log for log in logs if log["severity"].upper() == severity.upper()]
         return filtered_logs
     return logs
- 
+
+@app.get("/")
+def read_root():
+    return {"message": "Server is running"}
